@@ -10,12 +10,11 @@ using System.Windows.Forms;
 
 namespace QLTRUNGTAMHOCTHEM
 {
-    public partial class frm_ThanhToan : Form
+    public partial class frm_TrangChu : Form
     {
-        public frm_ThanhToan()
+        public frm_TrangChu()
         {
             InitializeComponent();
         }
-
     }
 }
