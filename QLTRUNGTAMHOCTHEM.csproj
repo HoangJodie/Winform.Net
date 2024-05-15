@@ -105,6 +105,8 @@
     <EmbeddedResource Include="frm_QLGiaoVien.resx">
       <DependentUpon>frm_QLGiaoVien.cs</DependentUpon>
     </EmbeddedResource>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frm_Main.resx">
       <DependentUpon>frm_Main.cs</DependentUpon>
     </EmbeddedResource>

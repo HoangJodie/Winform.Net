@@ -94,5 +94,10 @@ namespace QLTRUNGTAMHOCTHEM
             }
             else Application.OpenForms["frm_ThongKe"].Activate();
         }
+
+        private void btn_TrangChu_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
