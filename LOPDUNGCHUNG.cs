@@ -11,7 +11,7 @@ namespace WindowsFormsApp7
 {
     class LOPDUNGCHUNG
     {
-        string chuoikn = @"Data Source=DESKTOP-NJU1DKG\SQLEXPRESS;Initial Catalog=QLLopHocDB;Integrated Security=True;TrustServerCertificate=True";
+        string chuoikn = @"Data Source=DESKTOP-87IS1H6;Initial Catalog=QLLopHocDB;Integrated Security=True;TrustServerCertificate=True";
         SqlConnection conn;
         public LOPDUNGCHUNG()
         {
