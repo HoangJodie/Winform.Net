@@ -20,7 +20,7 @@ namespace QLTRUNGTAMHOCTHEM
         int dem = 0;
         private void btn_Dangnhap_Click(object sender, EventArgs e)
         {
-            string chuoikn = @"Data Source=DESKTOP-NJU1DKG\SQLEXPRESS;Initial Catalog=QLLopHocDB;Integrated Security=True;TrustServerCertificate=True";
+            string chuoikn = @"Data Source=LAPTOP-I258C8HB\HOANGHUY;Initial Catalog=QLTRUNGTAMHOCTHEM;Integrated Security=True;TrustServerCertificate=True";
             SqlConnection conn = new SqlConnection(chuoikn);
             string sql = "Select COUNT(*) from Admin_Accounts where Username = '" + txt_Taikhoan.Text + "' and  Password = '" + txt_Matkhau.Text + "'";
             SqlCommand comm = new SqlCommand(sql, conn);
