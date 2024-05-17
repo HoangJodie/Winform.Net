@@ -185,6 +185,9 @@
             this.label6.Size = new System.Drawing.Size(72, 17);
             this.label6.TabIndex = 40;
             this.label6.Text = "Bằng Cấp";
+            this.label6.Size = new System.Drawing.Size(77, 17);
+            this.label6.TabIndex = 40;
+            this.label6.Text = "Certificate";
             // 
             // txt_TimKiem
             // 
