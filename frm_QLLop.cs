@@ -21,7 +21,7 @@ namespace QLTRUNGTAMHOCTHEM
         }
         public void LoadLH()
         {
-            string sql = "SELECT cl.Class_ID, cl.Class_Name, cl.Teacher_ID, cl.Start_Date, cl.Class_Amount,           sch.Slot, rm.Room_Number      FROM Classes cl\r\n        INNER JOIN Schedules sch ON cl.Class_ID = sch.Class_ID        INNER JOIN Rooms rm ON sch.Room_ID = rm.Room_ID";
+            string sql = "SELECT cl.Class_ID, cl.Class_Name, cl.Teacher_ID, cl.Start_Date, cl.Class_Amount,           sch.Slot, rm.Room_Number      FROM Classes cl       INNER JOIN Schedules sch ON cl.Class_ID = sch.Class_ID        INNER JOIN Rooms rm ON sch.Room_ID = rm.Room_ID";
             dataGridView_QLLop.DataSource = lopchung.LoadDL(sql);
         }
 

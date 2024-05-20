@@ -114,24 +114,25 @@ namespace QLTRUNGTAMHOCTHEM
             try
             {
                 string sql = @"
-        SELECT 
-            c.Class_Name AS 'Tên Lớp', 
-            t.Teacher_Name AS 'Tên Giảng Viên', 
-            COUNT(sc.Student_ID) AS 'Tổng Số Học Viên', 
-            c.Start_Date AS 'Ngày Bắt Đầu', 
-            SUM(p.Amount) AS 'Tổng Doanh Thu'
-        FROM 
-            Classes c
-        INNER JOIN 
-            Teachers t ON c.Teacher_ID = t.Teacher_ID
-        LEFT JOIN 
-            Students_Classes sc ON c.Class_ID = sc.Class_ID
-        LEFT JOIN 
-            Payments p ON c.Class_ID = p.Class_ID AND p.Status = 'True'
-        GROUP BY 
-            c.Class_Name, t.Teacher_Name, c.Start_Date";
+             SELECT 
+                c.Class_Name AS 'Tên Lớp', 
+                t.Teacher_Name AS 'Tên Giảng Viên', 
+                COUNT(DISTINCT sc.Student_ID) AS 'Tổng Số Học Viên', 
+                c.Start_Date AS 'Ngày Bắt Đầu', 
+                COALESCE(SUM(CASE WHEN p.Status = 'True' THEN p.Amount ELSE 0 END), 0) AS 'Tổng Doanh Thu'
+            FROM 
+                Classes c
+            INNER JOIN 
+                Teachers t ON c.Teacher_ID = t.Teacher_ID
+            LEFT JOIN 
+                Students_Classes sc ON c.Class_ID = sc.Class_ID
+            LEFT JOIN 
+                Payments p ON c.Class_ID = p.Class_ID
+            WHERE 
+                p.Status = 'True' OR p.Status IS NULL
+            GROUP BY 
+                c.Class_Name, t.Teacher_Name, c.Start_Date";
 
-                LOPDUNGCHUNG db = new LOPDUNGCHUNG();
                 DataTable dt = db.LoadDL(sql);
                 data_danhSachTongHop.DataSource = dt;
             }

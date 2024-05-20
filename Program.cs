@@ -16,7 +16,7 @@ namespace QLTRUNGTAMHOCTHEM
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frm_DangKyLop());
+            Application.Run(new frm_DangNhap());
 
         }
     }

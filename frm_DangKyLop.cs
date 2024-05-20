@@ -97,7 +97,7 @@ namespace QLTRUNGTAMHOCTHEM
                 dungchung.conn.Close();
                 MessageBox.Show("Lỗi khi thêm dữ liệu: " + ex.Message);
             }
-            LoadDanhSachLop();
+            LoadDataIntoDataGridView();
         }
 
         private void LoadComboBoxClasses()
@@ -174,6 +174,7 @@ namespace QLTRUNGTAMHOCTHEM
             {
                 MessageBox.Show("Lỗi khi cập nhật: " + ex.Message);
             }
+            LoadDataIntoDataGridView();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -200,6 +201,7 @@ namespace QLTRUNGTAMHOCTHEM
             {
                 MessageBox.Show("Lỗi khi xóa: " + ex.Message);
             }
+            LoadDataIntoDataGridView();
         }
 
         
