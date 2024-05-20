@@ -40,9 +40,9 @@
             this.txt_SLHocVien = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txt_TimKiem = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btn_Tim = new System.Windows.Forms.Button();
             this.btn_Sua = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_Xoa = new System.Windows.Forms.Button();
             this.btn_Them = new System.Windows.Forms.Button();
             this.dataGridView_QLLop = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_QLLop)).BeginInit();
@@ -156,15 +156,16 @@
             this.txt_TimKiem.Size = new System.Drawing.Size(174, 22);
             this.txt_TimKiem.TabIndex = 38;
             // 
-            // button4
+            // btn_Tim
             // 
-            this.button4.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(649, 221);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(89, 27);
-            this.button4.TabIndex = 37;
-            this.button4.Text = "Tìm Kiếm";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btn_Tim.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Tim.Location = new System.Drawing.Point(649, 221);
+            this.btn_Tim.Name = "btn_Tim";
+            this.btn_Tim.Size = new System.Drawing.Size(89, 27);
+            this.btn_Tim.TabIndex = 37;
+            this.btn_Tim.Text = "Tìm Kiếm";
+            this.btn_Tim.UseVisualStyleBackColor = true;
+            this.btn_Tim.Click += new System.EventHandler(this.btn_Tim_Click);
             // 
             // btn_Sua
             // 
@@ -175,16 +176,18 @@
             this.btn_Sua.TabIndex = 36;
             this.btn_Sua.Text = "Sửa";
             this.btn_Sua.UseVisualStyleBackColor = true;
+            this.btn_Sua.Click += new System.EventHandler(this.btn_Sua_Click);
             // 
-            // button2
+            // btn_Xoa
             // 
-            this.button2.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(260, 221);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 27);
-            this.button2.TabIndex = 35;
-            this.button2.Text = "Xóa";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_Xoa.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Xoa.Location = new System.Drawing.Point(260, 221);
+            this.btn_Xoa.Name = "btn_Xoa";
+            this.btn_Xoa.Size = new System.Drawing.Size(75, 27);
+            this.btn_Xoa.TabIndex = 35;
+            this.btn_Xoa.Text = "Xóa";
+            this.btn_Xoa.UseVisualStyleBackColor = true;
+            this.btn_Xoa.Click += new System.EventHandler(this.btn_Xoa_Click);
             // 
             // btn_Them
             // 
@@ -195,6 +198,7 @@
             this.btn_Them.TabIndex = 34;
             this.btn_Them.Text = "Thêm";
             this.btn_Them.UseVisualStyleBackColor = true;
+            this.btn_Them.Click += new System.EventHandler(this.btn_Them_Click);
             // 
             // dataGridView_QLLop
             // 
@@ -205,6 +209,7 @@
             this.dataGridView_QLLop.RowTemplate.Height = 24;
             this.dataGridView_QLLop.Size = new System.Drawing.Size(669, 239);
             this.dataGridView_QLLop.TabIndex = 39;
+            this.dataGridView_QLLop.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_QLLop_CellClick);
             // 
             // frm_QLLop
             // 
@@ -213,9 +218,9 @@
             this.ClientSize = new System.Drawing.Size(814, 511);
             this.Controls.Add(this.dataGridView_QLLop);
             this.Controls.Add(this.txt_TimKiem);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.btn_Tim);
             this.Controls.Add(this.btn_Sua);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btn_Xoa);
             this.Controls.Add(this.btn_Them);
             this.Controls.Add(this.txt_SLHocVien);
             this.Controls.Add(this.label6);
@@ -233,6 +238,7 @@
             this.Name = "frm_QLLop";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "frm_QLLop";
+            this.Load += new System.EventHandler(this.frm_QLLop_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_QLLop)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -253,9 +259,9 @@
         private System.Windows.Forms.TextBox txt_SLHocVien;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txt_TimKiem;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btn_Tim;
         private System.Windows.Forms.Button btn_Sua;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_Xoa;
         private System.Windows.Forms.Button btn_Them;
         private System.Windows.Forms.DataGridView dataGridView_QLLop;
     }

@@ -41,12 +41,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txt_Certi = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txt_TimKiem = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btn_Timkiem = new System.Windows.Forms.Button();
             this.btn_Sua = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_xoa = new System.Windows.Forms.Button();
             this.btn_Them = new System.Windows.Forms.Button();
             this.dataGridView_QLGiaoVien = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_QLGiaoVien)).BeginInit();
@@ -169,12 +169,12 @@
             this.label3.TabIndex = 28;
             this.label3.Text = "MSGV";
             // 
-            // textBox3
+            // txt_Certi
             // 
-            this.textBox3.Location = new System.Drawing.Point(153, 163);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(206, 22);
-            this.textBox3.TabIndex = 41;
+            this.txt_Certi.Location = new System.Drawing.Point(153, 163);
+            this.txt_Certi.Name = "txt_Certi";
+            this.txt_Certi.Size = new System.Drawing.Size(206, 22);
+            this.txt_Certi.TabIndex = 41;
             // 
             // label6
             // 
@@ -182,9 +182,6 @@
             this.label6.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(60, 165);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(72, 17);
-            this.label6.TabIndex = 40;
-            this.label6.Text = "Bằng Cấp";
             this.label6.Size = new System.Drawing.Size(77, 17);
             this.label6.TabIndex = 40;
             this.label6.Text = "Certificate";
@@ -196,15 +193,16 @@
             this.txt_TimKiem.Size = new System.Drawing.Size(174, 22);
             this.txt_TimKiem.TabIndex = 46;
             // 
-            // button4
+            // btn_Timkiem
             // 
-            this.button4.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(642, 201);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(89, 27);
-            this.button4.TabIndex = 45;
-            this.button4.Text = "Tìm Kiếm";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btn_Timkiem.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Timkiem.Location = new System.Drawing.Point(642, 201);
+            this.btn_Timkiem.Name = "btn_Timkiem";
+            this.btn_Timkiem.Size = new System.Drawing.Size(89, 27);
+            this.btn_Timkiem.TabIndex = 45;
+            this.btn_Timkiem.Text = "Tìm Kiếm";
+            this.btn_Timkiem.UseVisualStyleBackColor = true;
+            this.btn_Timkiem.Click += new System.EventHandler(this.btn_Timkiem_Click);
             // 
             // btn_Sua
             // 
@@ -215,16 +213,18 @@
             this.btn_Sua.TabIndex = 44;
             this.btn_Sua.Text = "Sửa";
             this.btn_Sua.UseVisualStyleBackColor = true;
+            this.btn_Sua.Click += new System.EventHandler(this.btn_Sua_Click);
             // 
-            // button2
+            // btn_xoa
             // 
-            this.button2.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(253, 201);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 27);
-            this.button2.TabIndex = 43;
-            this.button2.Text = "Xóa";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_xoa.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_xoa.Location = new System.Drawing.Point(253, 201);
+            this.btn_xoa.Name = "btn_xoa";
+            this.btn_xoa.Size = new System.Drawing.Size(75, 27);
+            this.btn_xoa.TabIndex = 43;
+            this.btn_xoa.Text = "Xóa";
+            this.btn_xoa.UseVisualStyleBackColor = true;
+            this.btn_xoa.Click += new System.EventHandler(this.btn_xoa_Click);
             // 
             // btn_Them
             // 
@@ -246,6 +246,7 @@
             this.dataGridView_QLGiaoVien.RowTemplate.Height = 24;
             this.dataGridView_QLGiaoVien.Size = new System.Drawing.Size(669, 239);
             this.dataGridView_QLGiaoVien.TabIndex = 47;
+            this.dataGridView_QLGiaoVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_QLGiaoVien_CellClick);
             // 
             // frm_QLGiaoVien
             // 
@@ -254,11 +255,11 @@
             this.ClientSize = new System.Drawing.Size(814, 511);
             this.Controls.Add(this.dataGridView_QLGiaoVien);
             this.Controls.Add(this.txt_TimKiem);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.btn_Timkiem);
             this.Controls.Add(this.btn_Sua);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btn_xoa);
             this.Controls.Add(this.btn_Them);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txt_Certi);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txt_SDT);
             this.Controls.Add(this.txt_Email);
@@ -300,12 +301,12 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txt_Certi;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txt_TimKiem;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btn_Timkiem;
         private System.Windows.Forms.Button btn_Sua;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_xoa;
         private System.Windows.Forms.Button btn_Them;
         private System.Windows.Forms.DataGridView dataGridView_QLGiaoVien;
     }
