@@ -96,6 +96,8 @@ namespace QLTRUNGTAMHOCTHEM
         }
 
 
+        private void btn_TrangChu_Click(object sender, EventArgs e)
+        {
             if (Application.OpenForms["frm_TrangChu"] == null)
             {
                 frm_TrangChu formtc = new frm_TrangChu();
