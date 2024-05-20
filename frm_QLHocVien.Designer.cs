@@ -37,21 +37,22 @@
             this.txt_Hoten = new System.Windows.Forms.TextBox();
             this.txt_DiaChi = new System.Windows.Forms.TextBox();
             this.btn_Them = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_Xoa = new System.Windows.Forms.Button();
             this.btn_Sua = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.dataGridView_QLHocVien = new System.Windows.Forms.DataGridView();
             this.txt_SoSV = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btn_TimKiem = new System.Windows.Forms.Button();
             this.txt_TimKiem = new System.Windows.Forms.TextBox();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btn_Dem = new System.Windows.Forms.Button();
             this.cb_GioiTinh = new System.Windows.Forms.ComboBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.txt_SDT = new System.Windows.Forms.TextBox();
             this.txt_Email = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.btn_clear = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_QLHocVien)).BeginInit();
             this.SuspendLayout();
             // 
@@ -135,16 +136,18 @@
             this.btn_Them.TabIndex = 13;
             this.btn_Them.Text = "Thêm";
             this.btn_Them.UseVisualStyleBackColor = true;
+            this.btn_Them.Click += new System.EventHandler(this.btn_Them_Click);
             // 
-            // button2
+            // btn_Xoa
             // 
-            this.button2.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(259, 203);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 27);
-            this.button2.TabIndex = 14;
-            this.button2.Text = "Xóa";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_Xoa.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Xoa.Location = new System.Drawing.Point(259, 203);
+            this.btn_Xoa.Name = "btn_Xoa";
+            this.btn_Xoa.Size = new System.Drawing.Size(75, 27);
+            this.btn_Xoa.TabIndex = 14;
+            this.btn_Xoa.Text = "Xóa";
+            this.btn_Xoa.UseVisualStyleBackColor = true;
+            this.btn_Xoa.Click += new System.EventHandler(this.btn_Xoa_Click);
             // 
             // btn_Sua
             // 
@@ -155,6 +158,7 @@
             this.btn_Sua.TabIndex = 15;
             this.btn_Sua.Text = "Sửa";
             this.btn_Sua.UseVisualStyleBackColor = true;
+            this.btn_Sua.Click += new System.EventHandler(this.btn_Sua_Click);
             // 
             // label6
             // 
@@ -185,23 +189,26 @@
             this.dataGridView_QLHocVien.RowTemplate.Height = 24;
             this.dataGridView_QLHocVien.Size = new System.Drawing.Size(669, 239);
             this.dataGridView_QLHocVien.TabIndex = 18;
+            this.dataGridView_QLHocVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_QLHocVien_CellClick);
             // 
             // txt_SoSV
             // 
             this.txt_SoSV.Location = new System.Drawing.Point(529, 155);
             this.txt_SoSV.Name = "txt_SoSV";
+            this.txt_SoSV.ReadOnly = true;
             this.txt_SoSV.Size = new System.Drawing.Size(57, 22);
             this.txt_SoSV.TabIndex = 19;
             // 
-            // button4
+            // btn_TimKiem
             // 
-            this.button4.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(648, 203);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(89, 27);
-            this.button4.TabIndex = 20;
-            this.button4.Text = "Tìm Kiếm";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btn_TimKiem.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_TimKiem.Location = new System.Drawing.Point(648, 203);
+            this.btn_TimKiem.Name = "btn_TimKiem";
+            this.btn_TimKiem.Size = new System.Drawing.Size(89, 27);
+            this.btn_TimKiem.TabIndex = 20;
+            this.btn_TimKiem.Text = "Tìm Kiếm";
+            this.btn_TimKiem.UseVisualStyleBackColor = true;
+            this.btn_TimKiem.Click += new System.EventHandler(this.btn_TimKiem_Click);
             // 
             // txt_TimKiem
             // 
@@ -210,15 +217,16 @@
             this.txt_TimKiem.Size = new System.Drawing.Size(174, 22);
             this.txt_TimKiem.TabIndex = 21;
             // 
-            // button5
+            // btn_Dem
             // 
-            this.button5.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(592, 152);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(89, 27);
-            this.button5.TabIndex = 22;
-            this.button5.Text = "Đếm";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btn_Dem.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Dem.Location = new System.Drawing.Point(592, 152);
+            this.btn_Dem.Name = "btn_Dem";
+            this.btn_Dem.Size = new System.Drawing.Size(89, 27);
+            this.btn_Dem.TabIndex = 22;
+            this.btn_Dem.Text = "Đếm";
+            this.btn_Dem.UseVisualStyleBackColor = true;
+            this.btn_Dem.Click += new System.EventHandler(this.btn_Dem_Click);
             // 
             // cb_GioiTinh
             // 
@@ -234,6 +242,7 @@
             // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.CustomFormat = "dd/MM/yyyy";
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker1.Location = new System.Drawing.Point(160, 157);
             this.dateTimePicker1.Name = "dateTimePicker1";
@@ -274,25 +283,37 @@
             this.label9.TabIndex = 24;
             this.label9.Text = "Email";
             // 
+            // btn_clear
+            // 
+            this.btn_clear.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_clear.Location = new System.Drawing.Point(355, 203);
+            this.btn_clear.Name = "btn_clear";
+            this.btn_clear.Size = new System.Drawing.Size(75, 27);
+            this.btn_clear.TabIndex = 28;
+            this.btn_clear.Text = "Clear";
+            this.btn_clear.UseVisualStyleBackColor = true;
+            this.btn_clear.Click += new System.EventHandler(this.btn_clear_Click);
+            // 
             // frm_QLHocVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(814, 511);
+            this.Controls.Add(this.btn_clear);
             this.Controls.Add(this.txt_SDT);
             this.Controls.Add(this.txt_Email);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.btn_Dem);
             this.Controls.Add(this.txt_TimKiem);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.btn_TimKiem);
             this.Controls.Add(this.txt_SoSV);
             this.Controls.Add(this.dataGridView_QLHocVien);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btn_Sua);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btn_Xoa);
             this.Controls.Add(this.btn_Them);
             this.Controls.Add(this.cb_GioiTinh);
             this.Controls.Add(this.txt_DiaChi);
@@ -326,20 +347,21 @@
         private System.Windows.Forms.TextBox txt_Hoten;
         private System.Windows.Forms.TextBox txt_DiaChi;
         private System.Windows.Forms.Button btn_Them;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_Xoa;
         private System.Windows.Forms.Button btn_Sua;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView dataGridView_QLHocVien;
         private System.Windows.Forms.TextBox txt_SoSV;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btn_TimKiem;
         private System.Windows.Forms.TextBox txt_TimKiem;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btn_Dem;
         private System.Windows.Forms.ComboBox cb_GioiTinh;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.TextBox txt_SDT;
         private System.Windows.Forms.TextBox txt_Email;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button btn_clear;
     }
 }
