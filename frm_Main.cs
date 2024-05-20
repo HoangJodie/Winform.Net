@@ -95,9 +95,25 @@ namespace QLTRUNGTAMHOCTHEM
             else Application.OpenForms["frm_ThongKe"].Activate();
         }
 
-        private void btn_TrangChu_Click(object sender, EventArgs e)
-        {
 
+            if (Application.OpenForms["frm_TrangChu"] == null)
+            {
+                frm_TrangChu formtc = new frm_TrangChu();
+                formtc.MdiParent = this;
+                formtc.TopMost = true;
+                formtc.Show();
+                pictureBox1.Hide();
+            }
+            else Application.OpenForms["frm_TrangChu"].Activate();
+        }
+
+        private void btn_DangXuat_Click(object sender, EventArgs e)
+        {
+            DialogResult dt = MessageBox.Show("Bạn có muốn đăng xuất không?\t", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dt == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
     }
 }
