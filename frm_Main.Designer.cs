@@ -36,7 +36,7 @@
             this.btn_GiaoVien = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_DangKy = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
+            this.btn_DangXuat = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -128,15 +128,16 @@
             this.btn_DangKy.UseVisualStyleBackColor = true;
             this.btn_DangKy.Click += new System.EventHandler(this.btn_DangKy_Click);
             // 
-            // button8
+            // btn_DangXuat
             // 
-            this.button8.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.Location = new System.Drawing.Point(870, 595);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(95, 35);
-            this.button8.TabIndex = 13;
-            this.button8.Text = "Đăng Xuất";
-            this.button8.UseVisualStyleBackColor = true;
+            this.btn_DangXuat.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_DangXuat.Location = new System.Drawing.Point(870, 595);
+            this.btn_DangXuat.Name = "btn_DangXuat";
+            this.btn_DangXuat.Size = new System.Drawing.Size(95, 35);
+            this.btn_DangXuat.TabIndex = 13;
+            this.btn_DangXuat.Text = "Đăng Xuất";
+            this.btn_DangXuat.UseVisualStyleBackColor = true;
+            this.btn_DangXuat.Click += new System.EventHandler(this.button8_Click);
             // 
             // pictureBox1
             // 
@@ -154,7 +155,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(977, 642);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.button8);
+            this.Controls.Add(this.btn_DangXuat);
             this.Controls.Add(this.btn_DangKy);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_GiaoVien);
@@ -182,7 +183,7 @@
         private System.Windows.Forms.Button btn_GiaoVien;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_DangKy;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button btn_DangXuat;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button6;

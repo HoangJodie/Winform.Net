@@ -117,5 +117,14 @@ namespace QLTRUNGTAMHOCTHEM
                 Application.Exit();
             }
         }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            DialogResult dt = MessageBox.Show("Bạn có muốn đăng xuất không?\t", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dt == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
     }
 }
