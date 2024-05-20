@@ -182,9 +182,9 @@
             this.label6.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(60, 165);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(77, 17);
+            this.label6.Size = new System.Drawing.Size(79, 17);
             this.label6.TabIndex = 40;
-            this.label6.Text = "Certificate";
+            this.label6.Text = "Chứng Chỉ";
             // 
             // txt_TimKiem
             // 

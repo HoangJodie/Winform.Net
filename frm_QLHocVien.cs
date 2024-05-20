@@ -14,6 +14,7 @@ namespace QLTRUNGTAMHOCTHEM
     public partial class frm_QLHocVien : Form
     {
        LOPDUNGCHUNG dungchung = new LOPDUNGCHUNG();
+
         public frm_QLHocVien()
         {
             InitializeComponent();
