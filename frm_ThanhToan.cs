@@ -39,7 +39,7 @@ namespace QLTRUNGTAMHOCTHEM
             string sql = "Select * from Classes";
             cb_MSLop.DataSource = lopchung.LoadDL(sql);
             cb_MSLop.DisplayMember = "Class_ID";
-            cb_MSLop.ValueMember = "Class_Name";
+            cb_MSLop.ValueMember = "Class_ID";
         }
 
         private void btn_Sua_Click(object sender, EventArgs e)
@@ -55,12 +55,12 @@ namespace QLTRUNGTAMHOCTHEM
         {
             string sql = "Delete Payments where Payment_ID = N'" + txt_MaThanhToan.Text + "'";
             int kq = lopchung.ThemXoaSua(sql);
-            if (kq >= 1) MessageBox.Show("Xoá sinh viên thành công");
-            else MessageBox.Show("Xoá sinh viên thất bại");
+            if (kq >= 1) MessageBox.Show("Xoá thanh toán thành công");
+            else MessageBox.Show("Xoá thanh toán thất bại");
             LoadDL();
         }
 
-        private void dataGridView_QLThanhToan_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView_QLThanhToan_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             txt_MaThanhToan.Text = dataGridView_QLThanhToan.CurrentRow.Cells["Payment_ID"].Value.ToString();
             txt_MSSV.Text = dataGridView_QLThanhToan.CurrentRow.Cells["Student_ID"].Value.ToString();

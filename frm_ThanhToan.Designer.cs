@@ -161,7 +161,7 @@
             this.dataGridView_QLThanhToan.RowTemplate.Height = 24;
             this.dataGridView_QLThanhToan.Size = new System.Drawing.Size(669, 239);
             this.dataGridView_QLThanhToan.TabIndex = 49;
-            this.dataGridView_QLThanhToan.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_QLThanhToan_CellContentClick);
+            this.dataGridView_QLThanhToan.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_QLThanhToan_CellClick);
             // 
             // txt_TimKiem
             // 
