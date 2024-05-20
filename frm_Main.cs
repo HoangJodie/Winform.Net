@@ -98,15 +98,15 @@ namespace QLTRUNGTAMHOCTHEM
 
         private void btn_TrangChu_Click(object sender, EventArgs e)
         {
-            if (Application.OpenForms["frm_TrangChu"] == null)
+            if (Application.OpenForms["frm_Home"] == null)
             {
-                frm_Main formtc = new frm_Main();
+                frm_Home formtc = new frm_Home();
                 formtc.MdiParent = this;
                 formtc.TopMost = true;
                 formtc.Show();
                 pictureBox1.Hide();
             }
-            else Application.OpenForms["frm_Main"].Activate();
+            else Application.OpenForms["frm_Home"].Activate();
         }
 
         private void btn_DangXuat_Click(object sender, EventArgs e)
