@@ -40,5 +40,16 @@ namespace WindowsFormsApp7
             conn.Close();
             return kq;
         }
+
+        public string LayDL(string sql)
+        {
+            using (SqlConnection conn = new SqlConnection(chuoikn))
+            {
+                SqlCommand command = new SqlCommand(sql, conn);
+                conn.Open();
+                object result = command.ExecuteScalar();
+                return result != null ? result.ToString() : "Not found";
+            }
+        }
     }
 }

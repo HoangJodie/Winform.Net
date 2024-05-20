@@ -68,34 +68,56 @@ namespace QLTRUNGTAMHOCTHEM
         }
         private void btn_Them_Click(object sender, EventArgs e)
         {
-            string sql = "Insert into Students values (N'" + txt_MSSV.Text + "',N'" + txt_Hoten.Text + "',N'" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "',N'" + cb_GioiTinh.Text + "','" + txt_SDT.Text + "','" + txt_Email.Text + "',N'" + txt_DiaChi.Text + "')";
-            int kq = dungchung.ThemXoaSua(sql);
-            if (kq >= 1) MessageBox.Show("Thêm học viên thành công");
-            else MessageBox.Show("Thêm học viên thất bại");
-            LoadHocVien();
-            HienThiSoLuongSinhVien();
+            try
+            {
+                string sql = "Insert into Students values (N'" + txt_MSSV.Text + "',N'" + txt_Hoten.Text + "',N'" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "',N'" + cb_GioiTinh.Text + "','" + txt_SDT.Text + "','" + txt_Email.Text + "',N'" + txt_DiaChi.Text + "')";
+                int kq = dungchung.ThemXoaSua(sql);
+                if (kq >= 1) MessageBox.Show("Thêm học viên thành công");
+                else MessageBox.Show("Thêm học viên thất bại");
+                LoadHocVien();
+                HienThiSoLuongSinhVien();
+            }catch (Exception ex)
+            {
+                dungchung.conn.Close();
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btn_Sua_Click(object sender, EventArgs e)
         {
-            string sql = "UPDATE Students SET Student_Name = N'" + txt_Hoten.Text + "', Date_Of_Birth = '" + dateTimePicker1.Value.ToString("yyyy-MM-dd") +
+            try
+            {
+                string sql = "UPDATE Students SET Student_Name = N'" + txt_Hoten.Text + "', Date_Of_Birth = '" + dateTimePicker1.Value.ToString("yyyy-MM-dd") +
                          "', Gender = N'" + cb_GioiTinh.Text + "', Phone_Number = '" + txt_SDT.Text + "', Email = '" + txt_Email.Text + "', Address = N'" + txt_DiaChi.Text +
                          "' WHERE Student_ID = N'" + txt_MSSV.Text + "'";
-            int kq = dungchung.ThemXoaSua(sql);
-            if (kq >= 1) MessageBox.Show("Cập nhật Học Viên thành công");
-            else MessageBox.Show("Cập nhật Học Viên thất bại");
-            LoadHocVien();
-            HienThiSoLuongSinhVien();
+                int kq = dungchung.ThemXoaSua(sql);
+                if (kq >= 1) MessageBox.Show("Cập nhật Học Viên thành công");
+                else MessageBox.Show("Cập nhật Học Viên thất bại");
+                LoadHocVien();
+                HienThiSoLuongSinhVien();
+            }catch(Exception ex)
+            {
+                dungchung.conn.Close() ;
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btn_Xoa_Click(object sender, EventArgs e)
         {
-            string sql = "Delete Students where Student_ID = N'" + txt_MSSV.Text + "'";
-            int kq = dungchung.ThemXoaSua(sql);
-            if (kq >= 1) MessageBox.Show("Xoá học viên thành công");
-            else MessageBox.Show("Xoá học viên thất bại");
-            LoadHocVien();
-            HienThiSoLuongSinhVien();
+            try
+            {
+                string sql = "Delete Students where Student_ID = N'" + txt_MSSV.Text + "'";
+                int kq = dungchung.ThemXoaSua(sql);
+                if (kq >= 1) MessageBox.Show("Xoá học viên thành công");
+                else MessageBox.Show("Xoá học viên thất bại");
+                LoadHocVien();
+                HienThiSoLuongSinhVien();
+            }
+            catch (Exception ex)
+            {
+                dungchung.conn.Close();
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void dataGridView_QLHocVien_CellClick(object sender, DataGridViewCellEventArgs e)

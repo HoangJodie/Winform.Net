@@ -45,6 +45,9 @@
             this.btn_Sua = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.btn_Them = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.cb_Status = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_QLThanhToan)).BeginInit();
             this.SuspendLayout();
             // 
@@ -158,6 +161,7 @@
             this.dataGridView_QLThanhToan.RowTemplate.Height = 24;
             this.dataGridView_QLThanhToan.Size = new System.Drawing.Size(669, 239);
             this.dataGridView_QLThanhToan.TabIndex = 49;
+            this.dataGridView_QLThanhToan.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_QLThanhToan_CellClick);
             // 
             // txt_TimKiem
             // 
@@ -175,6 +179,7 @@
             this.button4.TabIndex = 47;
             this.button4.Text = "Tìm Kiếm";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // btn_Sua
             // 
@@ -185,6 +190,7 @@
             this.btn_Sua.TabIndex = 46;
             this.btn_Sua.Text = "Sửa";
             this.btn_Sua.UseVisualStyleBackColor = true;
+            this.btn_Sua.Click += new System.EventHandler(this.btn_Sua_Click);
             // 
             // button2
             // 
@@ -195,6 +201,7 @@
             this.button2.TabIndex = 45;
             this.button2.Text = "Xóa";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // btn_Them
             // 
@@ -205,12 +212,47 @@
             this.btn_Them.TabIndex = 44;
             this.btn_Them.Text = "Thêm";
             this.btn_Them.UseVisualStyleBackColor = true;
+            this.btn_Them.Click += new System.EventHandler(this.btn_Them_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(474, 51);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(0, 17);
+            this.label7.TabIndex = 51;
+            
+            // 
+            // cb_Status
+            // 
+            this.cb_Status.FormattingEnabled = true;
+            this.cb_Status.Items.AddRange(new object[] {
+            "Đã Thanh Toán",
+            "Chưa Thanh Toán"});
+            this.cb_Status.Location = new System.Drawing.Point(553, 44);
+            this.cb_Status.Name = "cb_Status";
+            this.cb_Status.Size = new System.Drawing.Size(185, 24);
+            this.cb_Status.TabIndex = 53;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(451, 48);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(80, 17);
+            this.label8.TabIndex = 52;
+            this.label8.Text = "Tình Trạng";
             // 
             // frm_ThanhToan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(814, 511);
+            this.Controls.Add(this.cb_Status);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.dataGridView_QLThanhToan);
             this.Controls.Add(this.txt_TimKiem);
             this.Controls.Add(this.button4);
@@ -233,6 +275,7 @@
             this.Name = "frm_ThanhToan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "frm_ThanhToan";
+            this.Load += new System.EventHandler(this.frm_ThanhToan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_QLThanhToan)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -258,5 +301,8 @@
         private System.Windows.Forms.Button btn_Sua;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btn_Them;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox cb_Status;
+        private System.Windows.Forms.Label label8;
     }
 }
