@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp7;
 
 namespace QLTRUNGTAMHOCTHEM
 {
@@ -20,13 +21,18 @@ namespace QLTRUNGTAMHOCTHEM
         int dem = 0;
         private void btn_Dangnhap_Click(object sender, EventArgs e)
         {
-            string chuoikn = @"Data Source=LAPTOP-I258C8HB\HOANGHUY;Initial Catalog=QLTRUNGTAMHOCTHEM;Integrated Security=True;TrustServerCertificate=True";
-            SqlConnection conn = new SqlConnection(chuoikn);
-            string sql = "Select COUNT(*) from Admin_Accounts where Username = '" + txt_Taikhoan.Text + "' and  Password = '" + txt_Matkhau.Text + "'";
-            SqlCommand comm = new SqlCommand(sql, conn);
-            conn.Open();
+            LOPDUNGCHUNG db = new LOPDUNGCHUNG();
+            string sql = "SELECT COUNT(*) FROM Admin_Accounts WHERE Username = @username AND Password = @password";
+            // Tạo SqlCommand mới
+            SqlCommand comm = new SqlCommand(sql, db.conn);
+            // Thêm tham số vào SqlCommand
+            comm.Parameters.AddWithValue("@username", txt_Taikhoan.Text);
+            comm.Parameters.AddWithValue("@password", txt_Matkhau.Text);
+
+            db.conn.Open();
             int kq = (int)comm.ExecuteScalar();
-            conn.Close();
+            db.conn.Close();
+
             if (kq >= 1)
             {
                 MessageBox.Show("Đăng nhập thành công");
